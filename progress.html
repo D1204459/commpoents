@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>progress bar</title>
+</head>
+<body>
+<!-- label 標籤是表單標籤，這個標籤的 for 屬性指向了一個表單控件，
+表示這個 label 標籤是對這個表單控件的描述。
+這個 label 標籤的內容為“Downloading progress:”。 -->
+<lable for="file">Downloading progress</lable>
+<progress id="file" valus="0" max="100"></progress>
+<button id="load">Click me</button>
+<script>
+    let i = 0;
+
+    function move(){
+        let element = document.getElementById("file");
+    function  frame(){
+        i++;
+        element.value = i;
+    }
+        setInterval(frame,100);
+    }
+    document.getElementById("load").addEventListener("click",move)
+</script>
+</body>
+</html>
